@@ -1,0 +1,79 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile in GemVault protocol",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "fullName": { "type": "string", "maxLength": 100 },
+        "email": { "type": "string", "maxLength": 100 },
+        "role": { "type": "string", "maxLength": 50 },
+        "dob": { "type": "string", "maxLength": 20 },
+        "gender": { "type": "string", "maxLength": 20 },
+        "bodyWeightKg": { "type": "number" },
+        "profession": { "type": "string", "maxLength": 100 },
+        "country": { "type": "string", "maxLength": 100 },
+        "state": { "type": "string", "maxLength": 100 },
+        "profilePicture": { "type": "string", "maxLength": 500 },
+        "isVerified": { "type": "boolean" },
+        "createdAt": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["id", "fullName", "email", "role"]
+    },
+    "Certificate": {
+      "title": "Certificate",
+      "description": "Blockchain certificate record",
+      "type": "object",
+      "properties": {
+        "certificateId": { "type": "string", "maxLength": 128 },
+        "gemstoneName": { "type": "string", "maxLength": 100 },
+        "caratWeight": { "type": "number" },
+        "origin": { "type": "string", "maxLength": 100 },
+        "authenticityStatus": { "type": "string", "maxLength": 50 },
+        "clarityGrade": { "type": "string", "maxLength": 50 },
+        "cutGrade": { "type": "string", "maxLength": 50 },
+        "ownerName": { "type": "string", "maxLength": 100 },
+        "ownerEmail": { "type": "string", "maxLength": 100 },
+        "issuer": { "type": "string", "maxLength": 100 },
+        "timestamp": { "type": "string", "maxLength": 50 },
+        "blockHash": { "type": "string", "maxLength": 128 },
+        "previousHash": { "type": "string", "maxLength": 128 },
+        "verificationUrl": { "type": "string", "maxLength": 500 }
+      },
+      "required": ["certificateId", "gemstoneName", "ownerEmail"]
+    },
+    "Report": {
+      "title": "Report",
+      "description": "Gemstone analysis report",
+      "type": "object",
+      "properties": {
+        "reportId": { "type": "string", "maxLength": 128 },
+        "gemstoneName": { "type": "string", "maxLength": 100 },
+        "caratWeight": { "type": "number" },
+        "origin": { "type": "string", "maxLength": 100 },
+        "authenticityStatus": { "type": "string", "maxLength": 50 },
+        "clarityGrade": { "type": "string", "maxLength": 50 },
+        "durabilityScore": { "type": "number" },
+        "estimatedPriceUsd": { "type": "number" },
+        "aiNotes": { "type": "string", "maxLength": 1000 },
+        "createdAt": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["reportId", "gemstoneName"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "Registered user accounts"
+    },
+    "/certificates/{certificateId}": {
+      "schema": "Certificate",
+      "description": "Minted blockchain certificates"
+    },
+    "/reports/{reportId}": {
+      "schema": "Report",
+      "description": "Generated gemological inspection reports"
+    }
+  }
+}

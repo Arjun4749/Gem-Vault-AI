@@ -1,0 +1,6 @@
+{
+  "name": "GemVault AI - Gemstone Authentication & Astrological Platform",
+  "description": "AI-enabled Smart Gemstone Authentication, Astrological Recommendation, Durability Prediction, Dynamic Price Estimation, and Blockchain Certification Platform.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
